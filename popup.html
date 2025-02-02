@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duyusal Kolaylık</title>
+  <!-- Özel yazı tipleri -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=OpenDyslexic:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tiresias:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luciole:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=FS+Me:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dyslexie:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Ana renkler - Yeni modern tema */
+      --espresso: #2D3047;      /* Koyu lacivert - ana metin rengi */
+      --burgundy: #419D78;      /* Yeşil - vurgu rengi */
+      --olive: #566573;         /* Gri - ikincil metin rengi */
+      --ochre: #58A4B0;         /* Turkuaz - hover ve detay rengi */
+      
+      /* Gölge ve köşe yuvarlaklığı */
+      --radius: 12px;
+      --shadow: 0 2px 4px rgba(45, 48, 71, 0.1);
+      --shadow-hover: 0 4px 6px rgba(45, 48, 71, 0.15);
+    }
+
+    body {
+      width: 400px;
+      margin: 0;
+      padding: 12px;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #F7F9FC;      /* Daha açık ve modern bir arka plan */
+      color: var(--espresso);
+    }
+
+    /* Disleksi için yazı tipi sınıfları */
+    .font-dyslexic-1 {
+      font-family: var(--font-dyslexic-1) !important;
+      line-height: 1.5;
+      letter-spacing: 0.5px;
+      word-spacing: 3px;
+    }
+    .font-dyslexic-2 {
+      font-family: var(--font-dyslexic-2) !important;
+      line-height: 1.5;
+      letter-spacing: 0.5px;
+      word-spacing: 3px;
+    }
+    .font-dyslexic-3 {
+      font-family: var(--font-dyslexic-3) !important;
+      line-height: 1.5;
+      letter-spacing: 0.5px;
+      word-spacing: 3px;
+    }
+
+    /* Otizm spektrumu için yazı tipi sınıfları */
+    .font-autism-1 {
+      font-family: var(--font-autism-1) !important;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+    }
+    .font-autism-2 {
+      font-family: var(--font-autism-2) !important;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+    }
+    .font-autism-3 {
+      font-family: var(--font-autism-3) !important;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+    }
+
+    /* Görme zorluğu için yazı tipi sınıfları */
+    .font-visual-1 {
+      font-family: var(--font-visual-1) !important;
+      line-height: 1.4;
+      letter-spacing: 0.3px;
+    }
+    .font-visual-2 {
+      font-family: var(--font-visual-2) !important;
+      line-height: 1.4;
+      letter-spacing: 0.3px;
+    }
+    .font-visual-3 {
+      font-family: var(--font-visual-3) !important;
+      line-height: 1.4;
+      letter-spacing: 0.3px;
+    }
+
+    .header {
+      text-align: center;
+      background: linear-gradient(135deg, var(--burgundy) 0%, var(--ochre) 100%);
+      margin: -12px -12px 24px -12px;
+      padding: 40px 24px;
+      border-bottom: none;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .header img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 8px rgba(60, 30, 26, 0.15));
+      transition: transform 0.3s ease;
+    }
+
+    .header img:hover {
+      transform: scale(1.05);
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0;
+      color: white;
+      letter-spacing: -0.025em;
+    }
+
+    .header p {
+      color: rgba(255, 255, 255, 0.9);
+      margin: 8px 0 0 0;
+      font-size: 1rem;
+    }
+
+    .section {
+      background: white;
+      padding: 28px;
+      border-radius: var(--radius);
+      border: none;
+      margin-bottom: 28px;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .section:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-1px);
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      color: var(--espresso);
+      margin: 0 0 24px 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--burgundy);
+      font-weight: 600;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(88, 164, 176, 0.05);
+      border: 1px solid rgba(88, 164, 176, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .control-group:hover {
+      background: rgba(88, 164, 176, 0.08);
+      border-color: rgba(88, 164, 176, 0.2);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 500;
+      color: var(--espresso);
+      font-size: 0.95rem;
+    }
+
+    select, input[type="text"] {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid rgba(88, 164, 176, 0.2);
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      background: white;
+    }
+
+    select:hover, input[type="text"]:hover {
+      border-color: var(--burgundy);
+    }
+
+    select:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--burgundy);
+      box-shadow: 0 0 0 3px rgba(65, 157, 120, 0.1);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      background: rgba(88, 164, 176, 0.2);
+      border-radius: 3px;
+      -webkit-appearance: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      background: var(--burgundy);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      background: var(--ochre);
+      transform: scale(1.1);
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      width: 100%;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: normal;
+      cursor: pointer;
+      font-size: 0.95rem;
+      padding: 8px;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+    }
+
+    .checkbox-group label:hover {
+      background: rgba(88, 164, 176, 0.05);
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--burgundy);
+      border-radius: 4px;
+      -webkit-appearance: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    input[type="checkbox"]:checked {
+      background: var(--burgundy);
+      border-color: var(--burgundy);
+    }
+
+    .info-box {
+      background: rgba(88, 164, 176, 0.05);
+      padding: 16px;
+      border-radius: var(--radius);
+      margin-top: 16px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(88, 164, 176, 0.1);
+    }
+
+    .info-box p {
+      margin: 0;
+    }
+
+    .preview-box {
+      background: white;
+      padding: 24px;
+      border-radius: var(--radius);
+      margin: 28px 0;
+      border: 1px solid rgba(88, 164, 176, 0.1);
+      box-shadow: var(--shadow);
+    }
+
+    .preview-box h3 {
+      margin: 0 0 16px 0;
+      font-size: 1.1rem;
+      color: var(--burgundy);
+      font-weight: 600;
+    }
+
+    .preview-text {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.5;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--burgundy);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    button:hover {
+      background: var(--ochre);
+      transform: translateY(-1px);
+    }
+
+    .primary-button {
+      background: var(--burgundy);
+      color: white;
+      font-weight: 600;
+    }
+
+    .primary-button:hover {
+      background: var(--espresso);
+    }
+
+    .secondary-button {
+      background: white;
+      color: var(--espresso);
+    }
+
+    .secondary-button:hover {
+      background: rgba(182, 128, 86, 0.1);
+    }
+
+    .success-button {
+      background: var(--olive);
+      color: white;
+    }
+
+    .warning-button {
+      background: var(--ochre);
+      color: white;
+    }
+
+    .error-button {
+      background: var(--burgundy);
+      color: white;
+    }
+
+    /* Özel scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--burgundy);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--espresso);
+    }
+
+    /* Animasyonlar */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section {
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    /* Responsive tasarım */
+    @media (max-width: 400px) {
+      body {
+        width: 100vw;
+        min-width: auto;
+        padding: 12px;
+      }
+
+      .checkbox-group {
+        grid-template-columns: 1fr;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+    /* Yeni footer stili */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      margin: 32px -12px -12px -12px;
+      font-size: 0.9rem;
+      color: var(--olive);
+      background: white;
+      border-top: 1px solid rgba(88, 164, 176, 0.1);
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+
+    .footer span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .footer img {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+    }
+
+    .footer a {
+      color: var(--burgundy);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .footer a:hover {
+      color: var(--ochre);
+    }
+
+    /* Profil yönetimi stilleri */
+    .profile-section {
+      background: white;
+      border-top: none;
+      border: none;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 32px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-section .section-title {
+      color: var(--burgundy);
+      font-weight: 700;
+    }
+
+    .profile-controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .profile-controls input[type="text"] {
+      flex: 1;
+      padding: 14px 16px;
+      border: 1px solid rgba(182, 128, 86, 0.2);
+      border-radius: var(--radius);
+      outline: none;
+      transition: all 0.3s ease;
+      background: white;
+      font-size: 0.95rem;
+    }
+
+    .profile-controls input[type="text"]:focus {
+      border-color: var(--ochre);
+      box-shadow: 0 0 0 4px rgba(182, 128, 86, 0.1);
+    }
+
+    .profile-controls button {
+      white-space: nowrap;
+      background: var(--burgundy);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .profile-controls button:hover {
+      background: var(--espresso);
+    }
+
+    .profile-list {
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid rgba(182, 128, 86, 0.2);
+      border-radius: var(--radius);
+      background: white;
+    }
+
+    .profile-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      background: white;
+      border-bottom: 1px solid rgba(182, 128, 86, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .profile-item:hover {
+      background: rgba(182, 128, 86, 0.05);
+    }
+
+    .profile-item-name {
+      font-weight: 500;
+      color: var(--espresso);
+    }
+
+    .profile-item-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .profile-item button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .profile-item .load-btn {
+      background: var(--burgundy);
+      color: white;
+    }
+
+    .profile-item .load-btn:hover {
+      background: var(--espresso);
+    }
+
+    .profile-item .delete-btn {
+      background: var(--burgundy);
+      color: white;
+    }
+
+    .profile-item .delete-btn:hover {
+      background: #dc2626;
+    }
+
+    .no-profiles {
+      text-align: center;
+      padding: 16px;
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    /* Diğer bölümlerin alt boşluğunu ayarla */
+    .section:last-of-type {
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-content">
+      <img src="images/logo.png" alt="Duyusal Kolaylık Logo">
+      <h1>Duyusal Kolaylık</h1>
+      <p class="slogan">Herkes İçin Erişilebilir İnternet</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Yazı Ayarları</h2>
+    
+    <div class="control-group">
+      <label for="font-family">Yazı Tipi:</label>
+      <select id="font-family">
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Helvetica">Helvetica</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label for="font-size">Yazı Boyutu:</label>
+      <input type="range" id="font-size" min="12" max="24" value="16">
+      <span id="font-size-value">16px</span>
+    </div>
+
+    <div class="control-group">
+      <label for="letter-spacing">Harf Aralığı:</label>
+      <input type="range" id="letter-spacing" min="-1" max="3" step="0.1" value="0">
+      <span id="letter-spacing-value">0px</span>
+    </div>
+
+    <div class="control-group">
+      <label for="word-spacing">Kelime Aralığı:</label>
+      <input type="range" id="word-spacing" min="0" max="10" value="0">
+      <span id="word-spacing-value">0px</span>
+    </div>
+
+    <div class="control-group">
+      <label for="line-height">Satır Yüksekliği:</label>
+      <input type="range" id="line-height" min="1" max="3" step="0.1" value="1.5">
+      <span id="line-height-value">1.5</span>
+    </div>
+
+    <div class="control-group">
+      <label for="paragraph-spacing">Paragraf Aralığı:</label>
+      <input type="range" id="paragraph-spacing" min="0" max="40" value="16">
+      <span id="paragraph-spacing-value">16px</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Görsel Filtreler</h2>
+    <div class="control-group">
+      <label for="filter-mode">Filtre Modu:</label>
+      <select id="filter-mode">
+        <option value="default">Varsayılan</option>
+        <option value="dark">Koyu Mod (Göz yorgunluğunu azaltır)</option>
+        <option value="high-contrast">Yüksek Kontrast (Görsel netliği artırır)</option>
+        <option value="low-contrast">Düşük Kontrast (Görsel hassasiyeti azaltır)</option>
+        <option value="sepia">Sepya (Mavi ışığı azaltır)</option>
+        <option value="grayscale">Gri Ton (Renk hassasiyetini azaltır)</option>
+        <option value="reading">Okuma Modu (Disleksi dostu)</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label for="brightness">Parlaklık:</label>
+      <input type="range" id="brightness" min="50" max="150" value="100">
+      <span id="brightness-value">100%</span>
+    </div>
+
+    <div class="control-group">
+      <label for="saturation">Renk Doygunluğu:</label>
+      <input type="range" id="saturation" min="0" max="200" value="100">
+      <span id="saturation-value">100%</span>
+    </div>
+
+    <div class="control-group">
+      <label for="animation-speed">Animasyon Hızı:</label>
+      <select id="animation-speed">
+        <option value="normal">Normal</option>
+        <option value="reduced">Azaltılmış</option>
+        <option value="none">Kapalı</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Renk Körü Modu</h2>
+    <div class="control-group">
+      <label for="colorblind-mode">Renk Körü Tipi:</label>
+      <select id="colorblind-mode">
+        <option value="normal">Normal Görünüm</option>
+        <option value="protanopia">Kırmızı Renk Körlüğü (Protanopia)</option>
+        <option value="deuteranopia">Yeşil Renk Körlüğü (Deuteranopia)</option>
+        <option value="tritanopia">Mavi Renk Körlüğü (Tritanopia)</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label for="colorblind-strength">Düzeltme Gücü:</label>
+      <input type="range" id="colorblind-strength" min="0" max="100" value="100">
+      <span id="colorblind-strength-value">100%</span>
+    </div>
+
+    <div class="info-box">
+      <p><strong>Not:</strong> Bu filtreler, renk körü olmayan kişilerin renkleri renk körü bireylerin gördüğü gibi görmesini sağlar ve renk körü bireylerin renkleri daha iyi ayırt etmesine yardımcı olur.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Hareket Kontrolü</h2>
+    <div class="control-group">
+      <label for="motion-mode">Hareket Modu:</label>
+      <select id="motion-mode">
+        <option value="normal">Normal</option>
+        <option value="reduce">Azaltılmış Hareket</option>
+        <option value="stop">Tüm Hareketleri Durdur</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label>Hareket Tipleri:</label>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" id="control-animations" checked>
+          Animasyonlar
+        </label>
+        <label>
+          <input type="checkbox" id="control-transitions" checked>
+          Geçiş Efektleri
+        </label>
+        <label>
+          <input type="checkbox" id="control-videos" checked>
+          Otomatik Oynatılan Videolar
+        </label>
+        <label>
+          <input type="checkbox" id="control-gifs" checked>
+          GIF'ler
+        </label>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="motion-speed">Hareket Hızı:</label>
+      <input type="range" id="motion-speed" min="0" max="100" value="100">
+      <span id="motion-speed-value">100%</span>
+    </div>
+
+    <div class="info-box">
+      <p><strong>Not:</strong> Bu ayarlar, web sitelerindeki hareketli öğeleri kontrol etmenizi sağlar. Epilepsi ve görsel hassasiyeti olan kullanıcılar için önerilir.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Ses Kontrolü</h2>
+    <div class="control-group">
+      <label for="audio-mode">Ses Modu:</label>
+      <select id="audio-mode">
+        <option value="normal">Normal</option>
+        <option value="mute">Tamamen Sessiz</option>
+        <option value="custom">Özel Ayarlar</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label>Ses Tipleri:</label>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" id="control-background-audio" checked>
+          Arka Plan Müziği
+        </label>
+        <label>
+          <input type="checkbox" id="control-video-audio" checked>
+          Video Sesleri
+        </label>
+        <label>
+          <input type="checkbox" id="control-notification-audio" checked>
+          Bildirim Sesleri
+        </label>
+        <label>
+          <input type="checkbox" id="control-media-audio" checked>
+          Medya Oynatıcı Sesleri
+        </label>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="audio-volume">Ses Seviyesi:</label>
+      <input type="range" id="audio-volume" min="0" max="100" value="100">
+      <span id="audio-volume-value">100%</span>
+    </div>
+
+    <div class="control-group">
+      <label for="audio-balance">Ses Dengesi:</label>
+      <input type="range" id="audio-balance" min="-100" max="100" value="0">
+      <span id="audio-balance-value">Orta</span>
+    </div>
+
+    <div class="info-box">
+      <p><strong>Not:</strong> Bu ayarlar, web sitelerindeki sesleri kontrol etmenizi sağlar. İşitsel hassasiyeti olan kullanıcılar için önerilir.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Video Ayarları</h2>
+    <div class="control-group">
+      <label for="video-mode">Video Modu:</label>
+      <select id="video-mode">
+        <option value="normal">Normal</option>
+        <option value="custom">Özel Ayarlar</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label for="video-brightness">Parlaklık:</label>
+      <input type="range" id="video-brightness" min="0" max="200" value="100">
+      <span id="video-brightness-value">100%</span>
+    </div>
+
+    <div class="control-group">
+      <label for="video-contrast">Kontrast:</label>
+      <input type="range" id="video-contrast" min="0" max="200" value="100">
+      <span id="video-contrast-value">100%</span>
+    </div>
+
+    <div class="control-group">
+      <label for="video-saturation">Doygunluk:</label>
+      <input type="range" id="video-saturation" min="0" max="200" value="100">
+      <span id="video-saturation-value">100%</span>
+    </div>
+
+    <div class="control-group">
+      <label for="video-hue-rotate">Renk Tonu:</label>
+      <input type="range" id="video-hue-rotate" min="0" max="360" value="0">
+      <span id="video-hue-rotate-value">0°</span>
+    </div>
+
+    <div class="control-group">
+      <label for="video-blur">Bulanıklık:</label>
+      <input type="range" id="video-blur" min="0" max="10" value="0" step="0.1">
+      <span id="video-blur-value">0px</span>
+    </div>
+
+    <div class="control-group">
+      <label for="video-sepia">Sepya:</label>
+      <input type="range" id="video-sepia" min="0" max="100" value="0">
+      <span id="video-sepia-value">0%</span>
+    </div>
+
+    <div class="control-group">
+      <label for="video-grayscale">Gri Ton:</label>
+      <input type="range" id="video-grayscale" min="0" max="100" value="0">
+      <span id="video-grayscale-value">0%</span>
+    </div>
+
+    <div class="control-group">
+      <label for="video-invert">Renkleri Ters Çevir:</label>
+      <input type="range" id="video-invert" min="0" max="100" value="0">
+      <span id="video-invert-value">0%</span>
+    </div>
+
+    <div class="info-box">
+      <p><strong>Not:</strong> Bu ayarlar sadece aktif videoyu etkiler ve diğer sayfa öğelerini etkilemez.</p>
+    </div>
+  </div>
+
+  <div class="preview-box">
+    <h3>Ön İzleme</h3>
+    <p class="preview-text">Bu bir örnek metindir. Burada yapılan değişiklikleri görebilirsiniz. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+
+  <div class="profile-section">
+    <h2 class="section-title">Profil Yönetimi</h2>
+    
+    <div class="profile-controls">
+      <input type="text" id="profile-name" placeholder="Profil adı">
+      <button id="save-profile">Profili Kaydet</button>
+    </div>
+
+    <div class="profile-list" id="profile-list">
+      <div class="no-profiles">Henüz kaydedilmiş profil bulunmuyor</div>
+    </div>
+
+    <footer class="footer">
+      <span>Made with ❤️ by <a href="https://cakasoft.com" target="_blank">ÇakaSoft</a> Team</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

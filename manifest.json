@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Duyusal Kolaylık",
+  "version": "3.2.1",
+  "description": "Web sitelerinin görünümünü kişiselleştirin ve daha rahat bir okuma deneyimi yaşayın. Sürüm 2.2 - Yazı, Görsel Filtre, Renk Körü Modu, Gelişmiş Hareket, Ses ve Video Kontrolü",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "images/icon48.png",
+    "default_title": "Duyusal Kolaylık"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
