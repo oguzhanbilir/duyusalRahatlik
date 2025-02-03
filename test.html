@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duyusal Kolaylık - Herkes İçin Erişilebilir İnternet!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #e84393;
+            --text-color: #2c3e50;
+            --bg-color: #f4f4f9;
+            --section-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 30px;
+            padding: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .wave-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #fff;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: var(--section-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid rgba(108, 92, 231, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(108, 92, 231, 0.3);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .demo-section {
+            background: var(--section-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(108, 92, 231, 0.1);
+        }
+
+        .control-group {
+            margin: 1.5rem 0;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+
+        select {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin: 0.5rem 0;
+        }
+
+        .preview-text {
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: #f8f9fa;
+            margin: 1rem 0;
+            transition: all 0.3s;
+        }
+
+        .color-test-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .test-plates {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .test-plate {
+            position: relative;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .test-plate:hover {
+            transform: translateY(-5px);
+        }
+
+        .test-plate img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            margin: 1rem auto;
+            display: block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 10px;
+            object-fit: contain;
+        }
+
+        .test-answer {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .test-answer label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .test-answer input {
+            padding: 0.8rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            margin: 0 auto;
+            width: 120px;
+            text-align: center;
+            font-size: 1.1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .test-answer input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .test-result {
+            margin-top: 1rem;
+            font-weight: 500;
+            display: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .correct {
+            color: #27ae60;
+            background: rgba(39, 174, 96, 0.1);
+        }
+
+        .incorrect {
+            color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .testimonial-card {
+            background: var(--section-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 1px solid rgba(108, 92, 231, 0.1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(108, 92, 231, 0.3);
+        }
+
+        .testimonial-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: block;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <svg style="display: none;">
+        <!-- Protanopia Filter -->
+        <filter id="protanopia">
+            <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0, 0.558, 0.442, 0, 0, 0, 0, 0.242, 0.758, 0, 0, 0, 0, 0, 1, 0"/>
+        </filter>
+        <!-- Deuteranopia Filter -->
+        <filter id="deuteranopia">
+            <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0, 0.7, 0.3, 0, 0, 0, 0, 0.3, 0.7, 0, 0, 0, 0, 0, 1, 0"/>
+        </filter>
+        <!-- Tritanopia Filter -->
+        <filter id="tritanopia">
+            <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0, 0, 0.433, 0.567, 0, 0, 0, 0.475, 0.525, 0, 0, 0, 0, 0, 1, 0"/>
+        </filter>
+    </svg>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Duyusal Kolaylık Logo" class="logo">
+            </div>
+            <h1>Duyusal Kolaylık</h1>
+            <p class="tagline">Herkes İçin Erişilebilir İnternet!</p>
+            <p>Web deneyiminizi kişiselleştirin, daha konforlu bir internet deneyimi yaşayın.</p>
+            <a href="#demo" class="cta-button">
+                <i class="fas fa-magic"></i>
+                Hemen Deneyin
+            </a>
+        </div>
+        <div class="wave-bg"></div>
+    </header>
+
+    <section>
+        <h2 style="text-align: center; margin-bottom: 3rem;">Özellikler</h2>
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-eye feature-icon"></i>
+                <h3>Renk Körlüğü Desteği</h3>
+                <p>Protanopia (kırmızı), Deuteranopia (yeşil) ve Tritanopia (mavi) renk körlüğü türleri için özel filtreler ile web sitelerini herkes için görülebilir hale getirin.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-text-height feature-icon"></i>
+                <h3>Metin Erişilebilirliği</h3>
+                <p>Disleksi dostu yazı tipleri, özelleştirilebilir metin boyutu, harf aralığı ve satır yüksekliği ile okuma deneyiminizi iyileştirin.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-adjust feature-icon"></i>
+                <h3>Renk ve Kontrast</h3>
+                <p>Koyu mod, yüksek kontrast, düşük kontrast ve sepya modları ile gözlerinizi koruyun.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-video feature-icon"></i>
+                <h3>Hareket Kontrolü</h3>
+                <p>Animasyonları azaltın, hareketli görselleri kontrol edin ve daha sakin bir gezinme deneyimi yaşayın.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-volume-up feature-icon"></i>
+                <h3>Ses Kontrolü</h3>
+                <p>Otomatik sesleri susturun, ses seviyesini ayarlayın ve rahatsız edici ses deneyimlerinden kurtulun.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-sliders-h feature-icon"></i>
+                <h3>Video Ayarları</h3>
+                <p>Parlaklık, kontrast, doygunluk ve mavi ışık filtresi ile video içeriklerini gözlerinize uygun hale getirin.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="demo-section">
+        <h2 style="text-align: center;">Canlı Demo</h2>
+        <p style="text-align: center;">Aşağıdaki kontrolleri kullanarak eklentinin özelliklerini test edin.</p>
+
+        <div class="color-test-section">
+            <h3>Renk Körlüğü Testi</h3>
+            <p>Aşağıdaki test plakalarında gördüğünüz sayıları yazın. Bu test, renk körlüğü tipinizi belirlemenize yardımcı olacaktır.</p>
+            
+            <div class="control-group" style="max-width: 500px; margin: 2rem auto;">
+                <label>Renk Körlüğü Modu:</label>
+                <select id="colorBlindMode" style="font-size: 1rem; padding: 0.8rem;">
+                    <option value="normal">Normal Görünüm</option>
+                    <option value="protanopia">Kırmızı Renk Körlüğü (Protanopia)</option>
+                    <option value="deuteranopia">Yeşil Renk Körlüğü (Deuteranopia)</option>
+                    <option value="tritanopia">Mavi Renk Körlüğü (Tritanopia)</option>
+                </select>
+            </div>
+
+            <div class="test-plates">
+                <div class="test-plate">
+                    <img src="gorseller/Ishihara_02.jpg" alt="Ishihara Test Plakası 1" style="width: 300px; height: 300px; object-fit: contain;">
+                    <div class="test-answer">
+                        <label>Gördüğünüz sayı:</label>
+                        <input type="number" class="test-input" data-correct="6">
+                        <div class="test-result"></div>
+                    </div>
+                </div>
+                <div class="test-plate">
+                    <img src="gorseller/Ishihara_03.jpg" alt="Ishihara Test Plakası 2" style="width: 300px; height: 300px; object-fit: contain;">
+                    <div class="test-answer">
+                        <label>Gördüğünüz sayı:</label>
+                        <input type="number" class="test-input" data-correct="16">
+                        <div class="test-result"></div>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
+                Not: Bu test Ishihara renk körlüğü test plakalarını kullanmaktadır. Eğer sayıları görmekte zorlanıyorsanız veya farklı sayılar görüyorsanız, 
+                renk körlüğünün bir türüne sahip olabilirsiniz. Kesin tanı için bir göz doktoruna başvurmanızı öneririz.
+            </p>
+        </div>
+
+        <div class="control-group">
+            <label>Yazı Tipi:</label>
+            <select id="fontSelect">
+                <option value="default">Varsayılan Yazı Tipi</option>
+                <optgroup label="Disleksi Dostu">
+                    <option value="OpenDyslexic">OpenDyslexic</option>
+                    <option value="Lexia">Lexia</option>
+                    <option value="Dyslexie">Dyslexie</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Metin Boyutu: <span id="fontSizeValue">16</span>px</label>
+            <input type="range" id="fontSize" min="12" max="32" value="16">
+        </div>
+
+        <div class="control-group">
+            <label>Renk Şeması:</label>
+            <select id="colorScheme">
+                <option value="default">Varsayılan</option>
+                <option value="dark">Koyu Mod</option>
+                <option value="highContrast">Yüksek Kontrast</option>
+                <option value="lowContrast">Düşük Kontrast</option>
+                <option value="sepia">Sepya</option>
+            </select>
+        </div>
+
+        <div class="preview-text" id="previewText">
+            <h3>Önizleme Metni</h3>
+            <p>Bu metin, seçtiğiniz ayarların nasıl görüneceğini gösterir. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div style="margin-top: 1rem;">
+                <span style="background: #ff0000; color: white; padding: 5px;">Kırmızı</span>
+                <span style="background: #00ff00; color: white; padding: 5px;">Yeşil</span>
+                <span style="background: #0000ff; color: white; padding: 5px;">Mavi</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="text-align: center;">Kullanıcı Deneyimleri</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <img src="https://i.pravatar.cc/150?img=1" alt="Kullanıcı" class="testimonial-avatar">
+                <h3>Ayşe Y.</h3>
+                <p>"Disleksi ile mücadele eden biri olarak, bu eklenti sayesinde internette okuma yapmak artık çok daha kolay. Özellikle OpenDyslexic yazı tipi seçeneği benim için bir devrim niteliğinde."</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://i.pravatar.cc/150?img=2" alt="Kullanıcı" class="testimonial-avatar">
+                <h3>Mehmet K.</h3>
+                <p>"Renk körlüğü filtreleri sayesinde web sitelerindeki renkleri artık çok daha iyi ayırt edebiliyorum. Bu eklenti internet deneyimimi tamamen değiştirdi."</p>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://i.pravatar.cc/150?img=3" alt="Kullanıcı" class="testimonial-avatar">
+                <h3>Zeynep A.</h3>
+                <p>"Migren hastası olarak, mavi ışık filtresi ve parlaklık ayarları özelliklerini çok sevdim. Artık uzun süre bilgisayar başında kalabiliyorum."</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 ÇakaSoft. Tüm hakları saklıdır.</p>
+        <p style="margin-top: 0.5rem;">Bu eklenti ÇakaSoft ekibi tarafından geliştirilmiştir.</p>
+    </footer>
+
+    <script>
+        // Renk körlüğü filtresi
+        document.getElementById('colorBlindMode').addEventListener('change', function(e) {
+            const filters = {
+                normal: 'none',
+                protanopia: 'url(#protanopia)',
+                deuteranopia: 'url(#deuteranopia)',
+                tritanopia: 'url(#tritanopia)'
+            };
+            const selectedFilter = filters[e.target.value];
+            
+            // Önizleme metnine filtre uygula
+            document.getElementById('previewText').style.filter = selectedFilter;
+            
+            // Test plakalarına filtre uygula
+            document.querySelectorAll('.test-plate img').forEach(img => {
+                img.style.filter = selectedFilter;
+            });
+        });
+
+        // Yazı tipi değişimi
+        document.getElementById('fontSelect').addEventListener('change', function(e) {
+            document.getElementById('previewText').style.fontFamily = e.target.value;
+        });
+
+        // Metin boyutu değişimi
+        document.getElementById('fontSize').addEventListener('input', function(e) {
+            document.getElementById('fontSizeValue').textContent = e.target.value;
+            document.getElementById('previewText').style.fontSize = e.target.value + 'px';
+        });
+
+        // Renk şeması değişimi
+        document.getElementById('colorScheme').addEventListener('change', function(e) {
+            const schemes = {
+                default: { bg: '#f8f9fa', color: '#000000' },
+                dark: { bg: '#222222', color: '#ffffff' },
+                highContrast: { bg: '#000000', color: '#ffffff' },
+                lowContrast: { bg: '#f0f0f0', color: '#444444' },
+                sepia: { bg: '#f4ecd8', color: '#5b4636' }
+            };
+            const scheme = schemes[e.target.value];
+            const preview = document.getElementById('previewText');
+            preview.style.backgroundColor = scheme.bg;
+            preview.style.color = scheme.color;
+        });
+
+        // Renk körlüğü testi
+        document.querySelectorAll('.test-input').forEach(input => {
+            input.addEventListener('input', function() {
+                const correctAnswer = this.dataset.correct;
+                const resultDiv = this.nextElementSibling;
+                
+                if (this.value === '') {
+                    resultDiv.style.display = 'none';
+                    return;
+                }
+
+                resultDiv.style.display = 'block';
+                if (this.value === correctAnswer) {
+                    resultDiv.textContent = '✓ Doğru';
+                    resultDiv.className = 'test-result correct';
+                } else {
+                    resultDiv.textContent = '✗ Yanlış - Bu bir renk körlüğü belirtisi olabilir';
+                    resultDiv.className = 'test-result incorrect';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
