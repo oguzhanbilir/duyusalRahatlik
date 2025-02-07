@@ -4,7 +4,7 @@
 
 ---
 
-## 🎉 [1.0.0] - 2025-02-06
+## 🎉 [3.2.1] - 2025-02-06
 ### ✨ Eklenen
 - 🌓 Karanlık mod desteği
 - 🌍 Dil seçeneği (Türkçe/İngilizce)
@@ -23,7 +23,7 @@
 
 ---
 
-## 🚀 [0.9.1] - 2025-01-25
+## 🚀 [3.2.0] - 2025-01-25
 ### ✨ Eklenen
 - ⚡ Anlık stil değişikliği özelliği
 - 🔄 Sayfa yenileme gerektirmeyen güncelleme sistemi
@@ -41,7 +41,7 @@
 
 ---
 
-## 🎯 [0.9.0] - 2025-01-15
+## 🎯 [3.1.0] - 2025-01-15
 ### ✨ Eklenen
 - 💾 Chrome Storage API entegrasyonu
 - 🔄 Ayarları sıfırlama butonu
@@ -60,7 +60,7 @@
 
 ---
 
-## 💫 [0.8.0] - 2024-12-20
+## 💫 [3.0.0] - 2024-12-20
 ### ✨ Eklenen
 - 📏 Başlık elementleri için göreceli boyutlandırma sistemi
 - 👁️ Görünürlük ve içerik kontrolü
@@ -73,7 +73,7 @@
 
 ---
 
-## 🛠️ [0.7.0] - 2024-12-05
+## 🛠️ [2.2.0] - 2024-12-05
 ### ✨ Eklenen
 - 📜 Content script sistemi
 - 📝 Temel metin manipülasyon özellikleri
@@ -86,7 +86,7 @@
 
 ---
 
-## ⚙️ [0.6.0] - 2024-11-15
+## ⚙️ [2.1.0] - 2024-11-15
 ### ✨ Eklenen
 - 📏 Metin boyutu ayarı (12px - 32px)
 - 📐 Harf aralığı ayarı (0px - 10px)
@@ -99,7 +99,7 @@
 
 ---
 
-## 🎨 [0.5.0] - 2024-11-01
+## 🎨 [2.0.0] - 2024-11-01
 ### ✨ Eklenen
 - 🔤 Yazı tipi seçimi (Quicksand, Arial, Times New Roman, OpenDyslexic)
 - 🎨 Temel stil ayarları
@@ -111,7 +111,7 @@
 
 ---
 
-## 💅 [0.4.0] - 2024-10-25
+## 💅 [1.2.0] - 2024-10-25
 ### ✨ Eklenen
 - 🎨 Modern arayüz tasarımı
 - 🎨 Renk paleti:
@@ -125,7 +125,7 @@
 
 ---
 
-## 🏗️ [0.3.0] - 2024-10-20
+## 🏗️ [1.1.0] - 2024-10-20
 ### ✨ Eklenen
 - 💻 Temel popup arayüzü
 - 💾 Ayar saklama sistemi
@@ -133,7 +133,7 @@
 
 ---
 
-## 🎬 [0.2.0] - 2024-10-17
+## 🎬 [1.0.1] - 2024-10-17
 ### ✨ Eklenen
 - 🏗️ Proje yapısı oluşturuldu
 - 📁 Temel dosyalar eklendi
@@ -141,7 +141,7 @@
 
 ---
 
-## 🌱 [0.1.0] - 2024-10-14
+## 🌱 [1.0.0] - 2024-10-14
 ### ✨ Eklenen
 - 🎉 Proje başlatıldı
 - 📝 İlk commit yapıldı
