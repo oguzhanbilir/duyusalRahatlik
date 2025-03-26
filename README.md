@@ -1,4 +1,4 @@
-# Duyusal Kolaylık Tarayıcı Uzantısı
+# Duyusal Rahatlık Tarayıcı Uzantısı
 
 Bu uzantı, Chromium tabanlı tarayıcılarda (Chrome, Edge, Opera, Brave vb.) web sayfalarını görsel ve duyusal açıdan daha rahat kullanılabilir hale getirmek için tasarlanmıştır. Kullanıcıların web deneyimini kişiselleştirmelerine ve daha konforlu hale getirmelerine yardımcı olur.
 
