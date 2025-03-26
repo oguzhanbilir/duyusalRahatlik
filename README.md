@@ -15,8 +15,11 @@ Bu uzantı, Chromium tabanlı tarayıcılarda (Chrome, Edge, Opera, Brave vb.) w
 
 1. Bu projeyi bilgisayarınıza indirin:
 ```bash
-git clone https://github.com/oguzhanbilir/duyusalKolaylik.git
+git clone https://github.com/oguzhanbilir/duyusalRahatlik.git
 ```
+
+
+
 
 2. Chromium tabanlı tarayıcınızı açın (Chrome, Edge, Opera, Brave vb.)
 3. Adres çubuğuna `chrome://extensions/` yazın (Edge için `edge://extensions/`, Opera için `opera://extensions/`)
