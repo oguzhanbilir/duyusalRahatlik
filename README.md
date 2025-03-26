@@ -52,4 +52,4 @@ Bu proje MIT lisansı ile lisanslanmıştır. Detaylı bilgi için `LICENSE` dos
 
 Oğuzhan Bilir - [GitHub Profilim](https://github.com/oguzhanbilir)
 
-Proje Sayfası: [https://github.com/oguzhanbilir/duyusalKolaylik](https://github.com/oguzhanbilir/duyusalKolaylik)
+Proje Sayfası: [https://github.com/oguzhanbilir/duyusalKolaylik](https://github.com/oguzhanbilir/duyusalRahatlik)
