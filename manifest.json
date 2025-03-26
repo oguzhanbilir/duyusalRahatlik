@@ -16,7 +16,7 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": "images/icon48.png",
-    "default_title": "Duyusal Kolaylık"
+    "default_title": "Duyusal Rahatlık"
   },
   "content_scripts": [
     {
