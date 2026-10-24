@@ -1,58 +1,47 @@
-# Duyusal Rahatlık Tarayıcı Uzantısı
+English | [Türkçe](README.tr.md)
 
-Bu uzantı, Chromium tabanlı tarayıcılarda (Chrome, Edge, Opera, Brave vb.) web sayfalarını görsel ve duyusal açıdan daha rahat kullanılabilir hale getirmek için tasarlanmıştır. Kullanıcıların web deneyimini kişiselleştirmelerine ve daha konforlu hale getirmelerine yardımcı olur.
+<p align="center"><img src="images/logo.png" width="96" alt="Sensory Comfort logo" /></p>
 
-## Özellikler
+# Sensory Comfort
 
-- 🎨 Renk kontrastını değiştirme
-- 📱 Yazı boyutunu ayarlama
-- 🖼️ Sayfa animasyonlarını kontrol etme
-- 🔆 Ekran parlaklığını ayarlama
-- 📏 Yazılar arası boşluğu düzenleme
-- 🎯 Odaklanma modunu açma/kapama
+A browser extension for Chromium-based browsers (Chrome, Edge, Opera, Brave) that makes web pages easier on the eyes and less overwhelming. It was built with people with sensory sensitivity and low vision in mind, following WCAG 2.1 guidelines.
 
-## Nasıl Yüklenir?
+**TÜBİTAK 2204-B** · 2nd place, regional exhibition (2024)
 
-1. Bu projeyi bilgisayarınıza indirin:
+Project page: https://oguzhanbilir.github.io/duyusalRahatlik/
+
+## Features
+
+- Change colour contrast
+- Adjust text size
+- Turn off page animations
+- Adjust brightness
+- Increase letter and line spacing
+- Focus mode
+
+Settings are saved and applied to every page you open.
+
+## Install
+
 ```bash
 git clone https://github.com/oguzhanbilir/duyusalRahatlik.git
 ```
 
+1. Open `chrome://extensions/` (`edge://extensions/` on Edge, `opera://extensions/` on Opera)
+2. Turn on Developer mode
+3. Click "Load unpacked" and select the cloned folder
 
+Click the extension icon in the toolbar to open the settings. `test.html` is a sample page for trying the options, and `gorseller/` holds the test images it uses (such as Ishihara plates).
 
+## Files
 
-2. Chromium tabanlı tarayıcınızı açın (Chrome, Edge, Opera, Brave vb.)
-3. Adres çubuğuna `chrome://extensions/` yazın (Edge için `edge://extensions/`, Opera için `opera://extensions/`)
-4. Sağ üstteki "Geliştirici modu" düğmesini açık konuma getirin
-5. "Paketlenmemiş öğe yükle" düğmesine tıklayın
-6. İndirdiğiniz klasörü seçin ve yükleyin
+| File | Purpose |
+|------|---------|
+| `manifest.json` | Extension manifest |
+| `popup.html`, `popup.js` | Settings panel |
+| `content.js` | Applies the settings to the page |
+| `style.css` | Styles injected into pages |
 
-## Nasıl Kullanılır?
+## Credits
 
-1. Uzantıyı yükledikten sonra tarayıcınızın sağ üst köşesindeki uzantı simgesine tıklayın
-2. Açılan pencereden istediğiniz ayarları yapın:
-   - Renk kontrastını değiştirin
-   - Yazı boyutunu büyütün veya küçültün
-   - Animasyonları kapatın
-   - Parlaklığı ayarlayın
-   - Yazılar arası boşluğu düzenleyin
-   - Odaklanma modunu açın
-3. Yaptığınız ayarlar otomatik olarak kaydedilir ve tüm web sayfalarında geçerli olur
-
-## Projeye Nasıl Katkıda Bulunabilirim?
-
-1. Projeyi kendi GitHub hesabınıza "fork"layın
-2. Yeni bir dal oluşturun (`git checkout -b yeni-ozellik`)
-3. Değişikliklerinizi kaydedin (`git commit -am 'Yeni özellik: Açıklama'`)
-4. Dalınızı GitHub'a gönderin (`git push origin yeni-ozellik`)
-5. GitHub üzerinden "Pull Request" oluşturun
-
-## Lisans
-
-Bu proje MIT lisansı ile lisanslanmıştır. Detaylı bilgi için `LICENSE` dosyasına bakabilirsiniz.
-
-## İletişim
-
-Oğuzhan Bilir - [GitHub Profilim](https://github.com/oguzhanbilir)
-
-Proje Sayfası: [https://github.com/oguzhanbilir/duyusalRahatlik](https://github.com/oguzhanbilir/duyusalRahatlik)
+Student research project. Advisor and developer: Oğuzhan Bilir.
