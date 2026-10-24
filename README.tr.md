@@ -1,5 +1,7 @@
 Türkçe | [English](README.md)
 
+[![Site check](https://github.com/oguzhanbilir/duyusalRahatlik/actions/workflows/check.yml/badge.svg)](https://github.com/oguzhanbilir/duyusalRahatlik/actions/workflows/check.yml)
+
 <p align="center"><img src="images/logo.png" width="96" alt="Duyusal Rahatlık logosu" /></p>
 
 # Duyusal Rahatlık
