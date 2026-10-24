@@ -1,5 +1,7 @@
 English | [Türkçe](README.tr.md)
 
+[![Site check](https://github.com/oguzhanbilir/duyusalRahatlik/actions/workflows/check.yml/badge.svg)](https://github.com/oguzhanbilir/duyusalRahatlik/actions/workflows/check.yml)
+
 <p align="center"><img src="images/logo.png" width="96" alt="Sensory Comfort logo" /></p>
 
 # Sensory Comfort
