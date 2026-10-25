@@ -8,7 +8,7 @@ English | [Türkçe](README.tr.md)
 
 A browser extension for Chromium-based browsers (Chrome, Edge, Opera, Brave) that makes web pages easier on the eyes and less overwhelming. It was built with people with sensory sensitivity and low vision in mind, following WCAG 2.1 guidelines.
 
-**TÜBİTAK 2204-B** · 2nd place, regional exhibition (2024)
+**TÜBİTAK 2204-B** · 2nd place, İzmir regional exhibition (2024)
 
 Project page: https://oguzhanbilir.github.io/duyusalRahatlik/
 

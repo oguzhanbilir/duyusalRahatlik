@@ -8,7 +8,7 @@ Türkçe | [English](README.md)
 
 Chromium tabanlı tarayıcılar (Chrome, Edge, Opera, Brave) için web sayfalarını göze daha rahat ve daha az yorucu hale getiren bir tarayıcı eklentisi. Duyusal hassasiyeti olan ve az gören kullanıcılar düşünülerek, WCAG 2.1 yönergelerine göre geliştirildi.
 
-**TÜBİTAK 2204-B** · Bölge sergisi 2.liği (2024)
+**TÜBİTAK 2204-B** · İzmir bölge sergisi 2.liği (2024)
 
 Proje sayfası: https://oguzhanbilir.github.io/duyusalRahatlik/
 
