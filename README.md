@@ -44,6 +44,14 @@ Click the extension icon in the toolbar to open the settings. `test.html` is a s
 | `content.js` | Applies the settings to the page |
 | `style.css` | Styles injected into pages |
 
+## Results
+
+From the exhibition write-up: the extension was tried on several Chromium browsers and sites. Measured page metrics with it enabled were LCP 0.15 s, CLS 0.06 and INP 8 ms. Profile settings survive a browser restart.
+
+<p align="center"><img src="docs/poster.png" width="420" alt="Exhibition poster" /></p>
+
+The version history, including the early "ÇakaSoftEx" prototypes, is in [CHANGELOG.md](CHANGELOG.md).
+
 ## Credits
 
 Student research project. Advisor and developer: Oğuzhan Bilir.

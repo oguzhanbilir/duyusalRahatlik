@@ -149,6 +149,32 @@
 
 ---
 
+## 🧪 Erken prototipler (ÇakaSoftEx, Kasım 2024)
+
+Uzantı ilk olarak "ÇakaSoftEx" çalışma adıyla prototiplendi. Bu sürümler depoya kod olarak eklenmedi; aşağıdaki notlar o dönemin sürüm notlarından ve kaynak dosyalarından derlendi.
+
+### v1.0
+- Renk ve kontrast: kontrast seviyesi ve parlaklık 0-100 aralığında ayarlanabilir
+- Metin: OpenDyslexic, Arial, Verdana ve Times New Roman yazı tipleri, 12-24 arası yazı boyutu
+- Sayfadaki animasyonları durdurma / devam ettirme
+- Video: otomatik sahne analizi (1-10 hassasiyet), video parlaklığı, kontrastı ve doygunluğu (0-2), ton döndürme (0-360), video hızı (0,25-2)
+
+### v1.1 - v1.2
+- Arayüz sadeleştirildi: aç/kapat anahtarı, otomatik ayar, geçiş süresi
+- Satır yüksekliği ve harf aralığı ayarları, sıfırlama düğmesi
+- v1.2'de eklenti ve otomatik ayar için durum göstergeleri
+
+### v1.4
+- Gri, pembe ve mavi tonlarda renk filtreleri
+- Videolar için otomatik kontrast/parlaklık
+- Arial / OpenDyslexic yazı tipi geçişi
+- Ses kontrolü: üst ses sınırı ve ani ses yükselmelerini engelleme
+- Ayarların kaydedilip tüm sitelerde uygulanması
+
+Bu prototiplerden sonra kod sıfırdan yeniden yazılarak bugünkü "Duyusal Rahatlık" yapısına geçildi (profil kaydetme, renk körlüğü modları, ayrıntılı hareket/ses/video kontrolleri).
+
+---
+
 ## 🎯 Planlanan Özellikler
 - 🎨 Renk kontrastı ayarlama
 - 🔤 Özel yazı tipi yükleme

@@ -44,6 +44,14 @@ Ayarlar için araç çubuğundaki eklenti simgesine tıklayın. `test.html` seç
 | `content.js` | Ayarları sayfaya uygular |
 | `style.css` | Sayfalara eklenen stiller |
 
+## Sonuçlar
+
+Sergi çalışmasından: uzantı birden fazla Chromium tarayıcıda ve farklı sitelerde denendi. Uzantı açıkken ölçülen değerler LCP 0,15 sn, CLS 0,06 ve INP 8 ms. Profil ayarları tarayıcı kapatılıp açıldığında da korunuyor.
+
+<p align="center"><img src="docs/poster.png" width="420" alt="Sergi afişi" /></p>
+
+Erken "ÇakaSoftEx" prototipleri dahil sürüm geçmişi [CHANGELOG.md](CHANGELOG.md) dosyasında.
+
 ## Emeği geçenler
 
 Öğrenci araştırma projesi. Danışman ve geliştirici: Oğuzhan Bilir.
